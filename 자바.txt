@@ -1,0 +1,206 @@
+조건 판단문 if(조건) {
+                        참일때;
+                        } else {
+                        거짓일 때;
+                        }
+
+            int speed;
+            speed = 0;
+            if(3>4) {
+                    System.out.println("참입니다.");
+            } else {
+                    System.out.println("거짓입니다.");
+            }
+
+
+my car test 패키지
+class bane : car
+member
+브랜드명 : brand (현대)
+차종 : carName (소나타)
+색상 : color
+속도 : speed
+
+- 메서드
+가속 : speedUp 속도값을 주어서 변경한다.  100km이상이면 " 과속입니다."
+멈춤 : stop 현재속도는 40km입니다. or 멈췄습니다.
+현재속도 : currentSpeed 현재 스피드는 0km입니다 
+
+
+MyCar class
+1. car를 생성합니다.
+2. 색상을 부여합니다.
+3. 속도를 높여보고 현재속도 파악
+4. 속도를 줄여보고 현재속도 파악
+(10km씩 줄이고 늘리기)
+
+
+package car;
+
+public class Car {
+    final String brand = "현대";
+    final String carName = "소나타";
+    String color = "Blue";
+    int currentspeed = 0;
+
+
+    void speedUp(int speed){
+        currentspeed= currentspeed + speed;
+        if (currentspeed > 100) {
+            currentSpeed();
+            System.out.println("과속입니다.");
+        } else {
+            currentSpeed();
+        }
+    }
+
+    void stop(int speed){
+        currentspeed = currentspeed + speed;
+        if (currentspeed < 0) {
+            currentSpeed();
+            System.out.println("멈췄습니다.");
+            if (currentspeed > 0){
+                currentSpeed();
+            }
+        }
+    }
+
+    void currentSpeed(){
+        System.out.println("현재 속도는" + currentspeed + "입니다");
+    }
+}
+
+
+
+
+
+my sql
+
+sql (씨퀄) - CRUD
+creat    -> insert into
+read    -> select
+update 
+delete 
+
+
+스키마 (schema)
+web server -> tomcat , nginx 등과 같은 프로그램을 사용
+db server -> 
+
+
+
+
+
+테이블 이름 : professor
+id int primary key auto_increment
+name  varchar(20)
+belong  char(3)
+phone   varchar(13)
+
+create table professor(
+id int primary key auto_increment,
+name varchar(20) not null,
+belong char(3) default 'FOO',
+phone varchar(13));
+
+
+제약조건 = constraints
+
+
+외우기 ******
+1. c(create) --- db -> insert
+insert into (테이블명(필드1, 필드2, 필드3,...)) values(값1,값2,값3,...);
+
+
+insert into professor(name, belong, phone) values('최종호','EZN','010-1111-1111');
+insert into professor(name, belong, phone) values('유재석','IDE','010-2222-2222');
+insert into professor(name, belong, phone) values('황영조','MSE','010-3333-3333');
+insert into professor(name, belong, phone) values('케이멀','ESE','010-4444-4444');
+insert into professor(name, belong, phone) values('강감찬','ESE','010-6666-6666');
+
+
+
+2. R(read) --- select 구문
+select * from 테이블명;
+
+
+select * from professor;
+
+
+
+3.D(delete) --- 삭제
+delete from professor where 조건;
+
+delete from professor where id = 101;
+
+
+
+
+
+
+
+테이블 구조 - 스키마 (schema) 관계 도식화하는 방식을 ERD (Entity Relational Diagram)라고 한다.
+
+table name : student
+id int 기본키 자동증가
+name varchar(20)
+belong char(3)
+tel varchar(13)
+p(professor)_id
+
+
+
+같은 타입의 맞춰야된다.
+
+int - int
+char - char
+varchar - varchar
+
+
+
+create table professor(
+id int primary key auto_increment,
+name varchar(20) not null,
+belong char(3) default 'FOO',
+phone varchar(13));
+
+
+
+
+
+create table student(
+id int primary key auto_increment,
+name varchar(20),
+belong char(3),
+tel varchar(13),
+p_id int);
+
+
+
+정보의 구조를 바꾸는 명령어
+
+alter table student modify column id varchar(8);
+
+
+
+
+select from test_sample;
+show tables;
+desc student;
+C:\javawork\mysql\test_schema.sql
+C:\javawork\mysql\professor_data.sql
+C:\javawork\mysql\student_data.sql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
