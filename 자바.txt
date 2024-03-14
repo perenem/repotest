@@ -1,3 +1,5 @@
+https://www.inflearn.com/ 
+
 조건 판단문 if(조건) {
                         참일때;
                         } else {
@@ -445,6 +447,892 @@ where belong in('ide','mse','ese')
 group by belong
 having avg <=2
 order by belong desc;
+
+
+
+
+
+
+
+
+
+
+
+
+선형구조 - 일렬정렬
+
+배열 - array
+선형으로 자료를 관리, 정해진 크기의 메모리를 먼저 할당받아 사용하고, 자료의 물리적 위치와 논리적 위치가 같음.
+
+중간에 삽입+삭제가 불가능하다.
+for 라는 반복구문을 사용하여 검색.
+같은 자료형이 같은 사이즈의 형태로 연속적으로 나타나는 것을 나타낸다.
+
+
+링크드리스트 linkedlist
+연결리스트 : 선형으로 자료를 관리, 자료가 추가될 때마다 메모리를 할당 받고, 자료는 링크로 연결됨.
+자료의 물리적 위치와 논리적 위치가 다를 수 있음.
+
+링크의 관계를 끊어내고, 삽입 및 삭제한다.
+
+
+단일 링크드리스트 - 단일
+
+이중 링크드리스트 - 양방향
+
+
+스택 - stack
+메모리의 스택과 비슷하다. - 가장 나중에 입력 된 자료가 가장 먼저 출력되는 자료구조.
+삭제명령 - pop
+추가명령 - push
+
+Last in First Out - 후입선출 ( 장기와 바둑의 무르기 ) LIFO구조
+
+
+큐 - Queue : 선입선출
+
+First In First Out - 대기번호  - FIFO구조
+
+
+
+비선형구조
+
+이진트리 : 부모노드에 자식노드가 두 개 이하인 트리
+1~100까지의 숫자찾기 게임을 생각하면 쉽다.
+자료(key)의 중복을 허용하지 않음
+왼쪽 자식 노드는 부모 노드보다 작은 값, 오른쪽 자식 노드는 부모노드보다 큰 값을 가짐.
+자료를 검색에 걸리는 시간이 평균 log(n) 임
+inorder traversal 탐색을 하게 되면 자료가 정렬되어 출력됨
+왼쪽 노드 -> 부모 노드 -> 오른쪽 노드 숙으로 탐색 ( 트리의 좌우가 바뀌면 역순 )
+Tree Set , Tree Maq
+
+Full Binary Tree(정이진트리)인 경우 노드의 수는 레벨
+
+
+힙 - heap : Priority queue 를 구현 (우선 큐)  가 있다.
+
+
+그래프 (Graph) : 정점과 간선들의 유한 집합 : G = (v,e)
+정점 : 여러특성을 가지는 객체, 노드
+
+
+
+해싱 ( Hashing ) : 자료를 검색하기 위한 자료 구조
+해쉬 알고리즘 - 기존 정보에 특정 값을 거쳐 새로운 값을 나타냄
+
+키(key)에 대한 자료를 검색하기 위한 사전 개념의 자료구조
+키는 유일하고 이에대한 밸류를 쌍으로 저장
+인덱스 = h(key) : 해시 하숨가 key에 대한 인덱스를 반환해줌 해당 인덱스 위치에 자료를 저장하거나 검색하게 됨
+해시 함수에 의해 인덱스 연산이 산술적으로 가능 O(1)
+저장되는 메모리 구조를 해시테이블이라 함
+보통 해시테이블이 75% 이상 차 있을 시에 재구성 함.
+Jdk 클래스 : hash map
+
+
+
+
+기본 정렬 알고리즘
+
+https://gmlwjd9405.github.io/2018/05/06/algorithm-insertion-sort.html
+
+버블정렬 - 순서대로 정렬
+크기별 순서대로 정리.
+직접 맞교환하며 정렬
+
+삽입정렬 - 
+
+selection 정렬
+
+
+
+
+
+package ch06;
+
+import java.util.Scanner;
+
+public class BetweenNumberSum {
+    public static void main(String[] args) {
+
+        // 임의의 두 정수 사이의 합을 구하여 출력합니다.
+        // 예를 들어, 3과 5가 주어진다면 3+4+5를 계산하여 리턴하면 된다. 두 수는 Scanner를 통해 정수로 입력 받습니다.
+        // 단, 작은 수와 큰 수가 바뀌어 들어 올 경우 두 수를 바꾸어서 처리합니다.
+        Scanner sc = new Scanner(System.in);
+        int intnum1 = 0;
+        int intnum2 = 0;
+        int sum = 0;
+        int temp;
+        String yesOrNo ="";
+        do {
+            System.out.println("계속하시겠습니까?");
+            yesOrNo = sc.next();
+        } while (yesOrNo.equals("Y"));
+
+    }
+}
+
+
+
+
+
+package ch06;
+
+import java.util.Scanner;
+
+public class BetweenNumberSum {
+    public static void main(String[] args) {
+
+        // 임의의 두 정수 사이의 합을 구하여 출력합니다.
+        // 예를 들어, 3과 5가 주어진다면 3+4+5를 계산하여 리턴하면 된다. 두 수는 Scanner를 통해 정수로 입력 받습니다.
+        // 단, 작은 수와 큰 수가 바뀌어 들어 올 경우 두 수를 바꾸어서 처리합니다.
+        Scanner sc = new Scanner(System.in);
+        int intnum1 = 0;
+        int intnum2 = 0;
+        int sum = 0;
+        int temp;
+        String yesOrNo ="";
+        do {
+            System.out.println("계속하시겠습니까?");
+            yesOrNo = sc.next();
+        } while (true);{
+            System.out.println();
+                    yesOrNo = sc.next();
+                    if(yesOrNo.equals("N")) break;
+        }
+
+    }
+}
+
+
+
+
+creat table_name(
+f1     int    field_name   type   primary key  auto_increment
+f2     varchar(10)  not  null  default  value
+
+insert into table_name(f1,f2) values(1, '데이터');
+
+insert into table_name values(1, '데이터');
+(1,'데이터'),
+(2,'데이터'),
+(3,'데이터');
+
+update table_name set f2 = 'data5' where f1 = 1;
+update table_name set f2 = 'data5', f3 = 'data' where f1 = 1;
+
+
+delete from table_name where f1=2;
+
+
+select * from table_name
+where (조건) f1 >= 3
+                f1 between 1 and 3
+                f1 in (1,3) and
+                f1 like 'data%'   % = 모든 것
+_ : 자리를 차지하는 한 문자
+
+sum() , count() , avg() , max() , min()
+
+공백이 들어간다면 '별칭 이에요' 라고 써주어야한다.
+
+order by f1 asc  or  desc
+
+group by 필드
+having 그룹화 한 필드의 조건
+
+
+alter - 테이블의 구조 변경
+alter table_name
+add column star varchar(20) not null,......
+drop column star
+change column star start  varchar(10)
+modify - 수정
+modify star varchar(200);
+
+
+
+
+abs = 절대값 : select abs (-100);
+mod = 나머지 select mod(14,3);
+
+올림 = ceiling
+반올림 = round
+버림 = floor, truncate
+
+select truncate (12340.234 , 2);
+=> 12340.23
+
+select truncate (12340.234 , -2);
+=> 12300
+
+
+rand 랜덤
+select rand()
+
+select rand() = 랜덤 수
+
+select floor(rand()*10)) = 1부터 10까지의 랜덤 수
+
+
+
+로또번호?
+select floor(rand()*4.5));
+
+select floor((rand()*10)*4.5);
+
+
+select floor(rand()*44+1) as 1st,
+floor(rand()*44+1) as 1st,
+floor(rand()*44+1) as 1st,
+floor(rand()*44+1) as 1st,
+floor(rand()*44+1) as 1st,
+floor(rand()*44+1) as 1st;
+
+| 1st | 1st | 1st | 1st | 1st | 1st |
++-----+-----+-----+-----+-----+-----+
+|   8 |   2 |  30 |  10 |   4 |  36 |
+
+연속적으로 사용되어 질때는 select 는 더 추가로 붙이지 않아도 된다.
+
+
+
+char_length( 문자의 갯수를 나타날때 자주 쓴다)
+
+concat = 더하기 문자합칠떄 사용하는 용도
+
+instr  = 찾는 문자열이 몇번째에 존재하는지 확인
+
+lpda = 공백을 넣기
+
+
+trim = 좌/우측 공백 제거.
+Ltrim / Rtrim
+
+
+left
+right
+mid
+
+select left('가나다라마바',3)
+
+
+
+select left('test999@gmail.com', instr('test999@gmail.com', '@')-1);
+@값 앞의 것들을 추출해낸다.
+
+
+LCASE, UCASE, LOWER, UPPER
+대소문자 변환하기
+
+
+replace - 문자열로 바꾸기
+ select replace ('it is banana','banana','apple');
+
+
+substring_index
+select substring('asdfdsfadsf',3,2);
+mid 와 같음.
+
+
+select substring_index('test999@gamil.com','@',1);
++--------------------------------------------+
+| substring_index('test999@gamil.com','@',1) |
++--------------------------------------------+
+| test999                                    |
++--------------------------------------------+
+
+
+서울특별시 용산구 서빙고로 137 (용산동6가)
+
+
+create table test(addr varchar(100));
+테이블 만들기
+
+
+
+select substring_index(substring_index(addr,' ',3),' ',-1) as 도로명 from test;
+
+
+
+날자 관련 함수
+
+select adddate
+
+
+select now();
+select curdate();  - 오늘의 날자
+select surtime(); - 현재 시간
+select sysdate(); - now와 같음
+select 
+
+
+
+
+alter table test
+add column insert_date date default(current_date) after addr;
+
+
+insert into test(addr) values('서울특별시 종로구 청와대로 1');
+
+
+
+
+if(조건) {
+}else if 
+{}
+else
+{}
+
+
+if(조건) 실행문;
+
+조건   int, double, boolean ( a == b)
+        String type : class 에서 온 타입이고 a.equals(b)
+        (대문자 S = class 에서 왔다)
+
+
+int sum = 0;
+for(int i= 1; i<=10; i++){
+sum = sum + i;
+}
+
+for(int i=10; i<1; i=i+2){
+}
+
+while(true){
+break; / continue; / return;
+}
+do{
+}
+while(조건);
+
+
+flag = true;
+while(true){
+if(flag==false) breeak;
+}
+do{
+} while(flag=[if 가 숨어있다]true)
+flag = false; 라면 do while 구문을 빠져나온다.
+
+
+배열
+ int[] num = {1,2,3};     =     int num[];
+num[0] = 2;
+
+
+for(int i = 0; i < num.lenth; i++){
+sout();
+}
+//advanced for
+for (int a : num){
+sout(a);
+}
+
+
+
+Scanner sc = new Scanner(System.in)
+
+변환할 금액을 입력하세요.
+계속할까요?(Y/N)
+
+yesOrNo
+
+
+
+
+주민번호 검증 알고리즘
+140416 - 4140817
+
+맨마지막 7 은 검증번호
+
+1단계
+각각을
+234567892345  각각 곱해서 더한다.
+2단계 :1단계에더한 값을 11로 나눈 나머지를 취한다.
+3단계 :2단계에 값을 11에서 뺀다.
+4단계 :3단계 값을 10으로 나눈 나머지를 취한다.
+5단계 :4단계 값과 주민번호 13번쨰 값과 비교.
+
+
+
+형변환
+주민번호 검증할때 써봄
+
+
+
+
+year(), monty(), day()
+
+select year(curdate());
+select month(now());
+select minute(now());
+select 
+
+
+date_format(now(), '00%Y-00%m-00%d');
+select date_format(now(), '%y-%m-%d');
+select date_format(now(), '%Y-%m-%d');
+select date_format(now(), '%Y년-%m월-%d일');
+
+시간,날자 빼기
+select datediff('날자','날자'), timediff('시간','시간');
+select datediff('2020-1-5','2020-1-1'), timediff('14:30:00','06:30:30');
+
+
+
+select datediff(now(),'2024-02-28')as '빌린날자';
+
+select datediff(now(),'2024-02-28')as '이서가 빌려간 날자';
+
+
+select concat('만 ',timestampdiff(YEAR,'2004-08-31','2024-03-12'),'세') as '장원영 만 나이',
+concat('만 ',timestampdiff(YEAR,'2003-09-01','2024-03-12'),'세') as '안유진 만 나이';
+
+
+select adddate(last_day('2024-01-01'), interval +1 day) as '저번달 첫번째 날자',
+last_day('2024-02-01') as '저번달 마지막 날자';
+
+
+select date(now()) + interval -3 month as '최근 3개월 전',
+date(now()) as '오늘';
+
+
+=세탁기 (세탁물,물,세제, [섬유유연제])  /   [ ]  꺽쇠괄호 안에 값은 안 써도 된다.
+
+from Dual -> 가상의 테이블로 실행해줘라
+
+
+
+timestampdiff
+
+concat
+
+예시
+select concat('만 ',timestampdiff(YEAR,'2004-08-31','2024-03-12'),'세') as '장원영 만 나이',
+        concat('만 ',timestampdiff(YEAR,'2003-09-01','2024-03-12'),'세') as '안유진 만 나이';
++----------------+----------------+
+| 장원영 만 나이 | 안유진 만 나이 |
++----------------+----------------+
+| 만 19세        | 만 20세        |
++----------------+----------------+
+
+
+select  timestampdiff(month,'1988-04-21',now())
+
+
+select last_day(now()) - interval 2 month + interval day as '첫날',
+last_day(now()) - interval 1 month as '마지막날;
+
+
+
+select member+id, member_name, date_format(date+of+birth,'%Y-%m-%d') as date_of_birth
+from member_profile
+where month(date_of_birth) = 3 and tlno is not null
+order by member_id;
+
+member+profile 테이블에서 생일이 3월인 여성 회원의 ID, 이름, 성별, 생년월일을 조회하는 sql문 작성
+이때, 전화번호가 null인 경우는 출력 제외, 결과는 회원 id를 기준으로 오름차순 정렬.
+
+select member+id, member_name, date_format(date_of_birth,'%Y-%m-%d') as date_of_birth
+from member_profile
+where month(date_of_birth) = month(now()) and tlno is not null
+order by member_id;
+
+이 경우는 이번달 생일인사람이 출력된다.
+
+
+논리 함수
+if / ifnull
+select if(month(now())=3,'ok','no');
+이번달이 3이면 ok, 아니면 no
+
+select ifnull('null','ERR');
+
+
+case 구문
+
+
+
+select curdate() as '오늘은', case dayofweek(now())
+when 1 then '일'
+when 2 then '월'
+when 3 then '화'
+when 4 then '수'
+when 5 then '목'
+when 6 then '금'
+when 7 then '토' end as '무슨요일?';
+
+
+
+mid (어디서, 시작은, 몇개를)
+
+select mid('일월화수목금토',dayofweek(now()), 1) as 요일
+
+or
+
+select concat(mid('일월화수목금토',dayofweek(now()),1), '요일') as 요일;
+
+
+
+
+distinct   중복제거
+
+select distinct belong from student;
+
++--------+
+| belong |
++--------+
+| IDE    |
+| CSE    |
+| ESE    |
+| MSE    |
+| IME    |
++--------+
+
+
+ select count(distinct belong) as '111' from student;
+
++-----+
+| 111 |
++-----+
+|   5 |
++-----+
+
+
+select * from student order by id desc limit 5;
+내림차순으로 하고 5번째까지
++----------+--------+--------+-------------+------+
+| id       | name   | belong | tel         | p_id |
++----------+--------+--------+-------------+------+
+| 20110506 | 오천   | MSE    | 01021334525 |    1 |
+| 20110502 | 부우   | IME    | 01034332634 |    1 |
+| 20110106 | 프랑키 | IME    | 01034343222 |    1 |
+| 20110103 | 상디   | MSE    | 01021342443 |    1 |
+| 20100507 | 베지터 | ESE    | 01023423623 |    2 |
++----------+--------+--------+-------------+------+
+
+
+select * from student order by id desc limit 5,2;
+6번째부터 2번까지
+
++----------+------+--------+-------------+------+
+| id       | name | belong | tel         | p_id |
++----------+------+--------+-------------+------+
+| 20100505 | 오공 | CSE    | 01023534644 |    2 |
+| 20100204 | 버기 | ESE    | 01023424343 |    2 |
++----------+------+--------+-------------+------+
+
+
+gril_group , song
+
+2개의 테이블에 프라이머리키와 포링키의 값이 같은 값을 불러온다
+
+girl_group_id 걸그룹이름 대표곡 
+
+select _id, name, title
+
+걸그룹의 별칭은 g 로 한다.
+노래의 별칭은 s로 한다.
+
+gril_group as g    //    song as s
+
+select g._id, g.name, s.title
+from girl_group as g inner join song as s        <- on 값이 표준
+on g.hit_song_id = s._id;
+
+select g._id, g.name, s.title
+from girl_group as g inner join song as s        <- where 조건이 어디인지 정확하지 않아 어렵다.
+where g.hit_song_id = s._id;
+
+
+inner join <- 프라이머리 키와 포링 키의 값을 비교해 엮어주는 역할?
+
+
+select g._id, g.name, s.title
+from song as s inner join girl_group as g
+on g.hit_song_id = s._id;
+
+테이블이 앞뒤가 달라져도 값은 같다.
+
+select g._id, g.name, s.title, s.lyrics
+from song as s inner join girl_group as g
+on g.hit_song_id = s._id;
+
+
+join 방식은 3가지가 있다.
+
+inner join  (기본방식) :  
+left join                 :
+right join               :
+
+
+select g._id, g.name, s.title
+from song as s left join girl_group as g
+on g.hit_song_id = s._id;
+
+
+히트곡이 없는 아이돌만 보고 싶다.
+
+select g._id, g.name, s.title
+from song as s left join girl_group as g
+on g.hit_song_id = s._id
+where g.hit_song_id is null;
+
+
+
+가사중에 'me'를 포함하는 자료의 id, 그룹이름, 가사를 출력하세요.
+
+select g._id, g.name, s.lyrics
+from song as s inner join girl_group as g
+on g.hit_song_id = s._id
+where s.lyrics like '%me%';
+
+
+
+
+데뷔해가 2011년인 그룹의 이름과 히트송 출력하라.
+
+select g.name, s.lyrics, g.debut
+from song as s inner join girl_group as g
+on g.hit_song_id = s._id
+where year(g.debut) = 2011;
+
+
+
+
+데뷔해를 기준으로 각 해 당 데뷔한 걸그룹 수를 출력하라.
+
+
+select Year(debut) as 연도, count(*) as '걸그룹 수' from girl_group
+group by year(debut);
+
+
+
+
+
+
+테이블 별칭 : girl_group as g = 걸그룹테이블의 별칭을 g로 설정한다.
+
+select g._id, g.name, g.debut, s.title, s.lyrics
+from girl_group g inner join song as s
+on g.hit_song_id = s._id
+
+
+a와 b의 교집합 = inner join
+a와 b의 교집합 + a의 전체까지 가져오는 것 = left join
+반대 = right join
+
+
+where 필드명  between / in / like / and / or
+group by 
+
+
+
+3개의 테이블 조인
+student 테이블 : p_id , name
+girl_group : _id, name, hit_song_id
+song : _id, title, lyrics
+teacher : 
+
+
+student 테이블의 p_id = 걸그룹 테이블의 p._id
+girl_group.hits_song_id = song._id
+
+student.p_id = girl_group._id
+girl_group.hits_song_id = song._id
+
+
+걸그룹 이름, 학생 이름, 데뷔일, 노래제목
+
+
+학생 = st
+걸그룹 = gg
+노래 = ss
+선생 = tt
+
+select gg.name, st.name, gg.debut, ss.title
+from girl_group as gg inner join song as ss
+on gg.hit_song_id = ss._id
+inner join student st
+on st.p_id = gg._id;
+
+
+
+걸그룹 이름, 학생이름, 데뷔일, 노래제목, teacher.name, teacher.phone
+조건 ... 데뷔해가 2009년인 자료중에서 학생이름이 두글자인 자료만 검색한다.
+
+
+
+select gg.name, st.name, gg.debut, ss.title
+from girl_group as gg inner join song as ss
+on gg.hit_song_id = ss._id
+inner join student st
+on st.p_id = gg._id
+inner join professor tt
+on tt.id = st.p_id
+where year(gg.debut) = 2009 and char_length(st.name) = 2;
+
+
+
+
+셀프조인
+
+create table emp (
+id int primary key,
+name varchar(10),
+super_id int);
+
+emp라는 이름의 테이블을 세팅
+
+insert into emp values
+(2,'정과장',1),
+(3,'최대리',2),
+(4,'이대리',2)
+
+insert into emp(id,name) values
+(1,'김사장'),
+(5,'박고문');
+
+
+select 
+from emp as emp1 inner join emp as emp2
+on emp1.id = s.super_id
+
+
+select emp1.id, emp1.name, emp2.name
+from emp emp1
+inner join emp emp2
+on emp1.super_id = emp2.id;
+
++----+-----------+-----------+
+| id | name      | name      |
++----+-----------+-----------+
+|  2 | 정과장    | 김사장    |
+|  3 | 최대리    | 정과장    |
+|  4 | 이대리    | 정과장    |
++----+-----------+-----------+
+
+select emp1.id, emp1.name, emp2.name
+from emp emp1
+left join emp emp2
+on emp1.super_id = emp2.id;
+
+
++----+-----------+-----------+
+| id | name      | name      |
++----+-----------+-----------+
+|  1 | 김사장    | NULL      |
+|  2 | 정과장    | 김사장    |
+|  3 | 최대리    | 정과장    |
+|  4 | 이대리    | 정과장    |
+|  5 | 박고문    | NULL      |
++----+-----------+-----------+
+
+
+
+서브 쿼리
+
+
+select * from girl_group
+where hit_song_id = (select _id from song where lyrics like '%give%');  
+
++-----+-----------+------------+-------------+
+| _id | name      | debut      | hit_song_id |
++-----+-----------+------------+-------------+
+|   5 | 다비치    | 2009-02-27 |         105 |
++-----+-----------+------------+-------------+
+
+select _id from song where lyrics like '%give%';
+select * from girl_group where hit_song_id =105;
+
+
+
+1  select * from girl_group
+  where hit_song_id = (select _id from song where lyrics like '%give%');
+위 1과 같은 문구는 아래에 2번의 식과 같다. 
+2 select _id from song where lyrics like '%give%';
+  select * from girl_group where hit_song_id =105;
+대신 한번만 사용하기 위에서 1의 내용을 입력하면 한번에 출력값이 나온다.
+
+
+
+
+
+select*from girl_group
+where hit_song_id in (select _id from song where lyrics like '%e%');    // in 중요
+
+
+select gg.name, gg.debut,
+(select title
+from song
+where title is not null
+and lyrics like '%e%'
+and gg.hit_song_id = _id
+) as hitsong
+from girl_group as gg;
+
+
+
+포링키 foreign key  = fk_ 
+
+
+[constraint 제약조건이름]
+foreign key(필드이름)
+references 테이블이름 (필드이름)
+)
+
+
+
+creat table test1(
+c_id nit,
+c_name varchar(10),
+p_id int,
+costration kf_id,
+foreign ky (p_id)
+references test1(p_id) on delecascade;
+
+
+
+
+
+
+
+
+
+
+transaction 트랜잭션
+
+start transaction
+ㅁ;멓ㅁㅎ;ㅁ렇;ㅣㅁㅇ렇
+commit  // 모두 만족한 값이 완료되었을때 작용된다.
+
+
+start transaction;
+insert into test2 values(2,'장원영',1);
+
+commit  <-을 입력하지 않으면 중간에 rollback; 입력시 다시 되돌아간다.
+
+
+start transaction;
+insert into test2 values(2,'장원영',1);
+commit  -> 장원영이란 이름으로 데이터베이스에 저장한다.
+
+
+
+
+
+show variables like '%commit%';
+
+commit 정보를 불러오는 명령어
+
+
+
+
+
+
+
+
 
 
 
