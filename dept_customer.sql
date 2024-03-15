@@ -1,0 +1,10 @@
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('류민이', '123-1234', '7001131537915', 3 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('','이강민', '343-1454', '6902161627914', 2 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('이영희', '144-1655', '7503202636215', NULL); 
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('김철이', '673-1674', '7704301234567', 4 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('박류완', '123-1674', '7205211123675', 3 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('서캔디', '673-1764', '6507252534566', NULL); 
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('신똘이', '176-7677', '0006083648614', 7 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('도쇠돌', '123-6774', '0008041346574', 9 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('권홍이', '767-1234', '7312251234689', 13 );
+insert into customer(cus_name,tel_num,jumin_num,emp_no) values('김안나', '767-1677', '7510152432168', 4 );
