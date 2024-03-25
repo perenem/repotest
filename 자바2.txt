@@ -1,0 +1,100 @@
+1. 절차지향 프로그램 : 순서대로의 입력방식
+
+
+2. 객체지향 프로그램 (OOP) : Object Oriented programming
+
+특징
+-정보의 은닉화
+-Overloading
+-Overriding
+-다형성
+-상속의 개념
+
+
+getter
+
+가지고 오는 것
+
+
+
+
+setter
+
+바꿔주는 것.
+
+
+
+자바
+
+public  -  어느 곳에서나 접근 가능
+private -  선언된 클래스 내부에서만 접근 가능
+defalut / protected - 동일한 패키지 내에서 접근 가능
+
+
+public class Car {
+멤버변수;   (private로 선언 : getter, setter에 의해서만 접근이 가능하도록 선언한다.)
+메서드;      
+생성자;      (defalut 라는 기본 생성자 : default constructor -> public Car(){}  / 인자를 갖는 생성자 : public Car(){}
+private String name;
+private int value;
+public Car(String name, int value){
+       this.name = name;
+       this.value = value;
+}
+
+Getter
+public String getName(){
+        return this.name;
+}
+
+
+Setter
+public void setName(String name){
+        this.name = name;
+}
+
+Getter , Setter 는 약속된 명령문
+
+
+상속 ( extends 를 사용)
+부모가 클래스의 멤버와 메서드를 그대로 받아서 자식 클래스에서 사용 가능하도록 하는 것. ( java 햄버거 클래스를 만들어서 사용해봄)
+
+
+결합 ( composition)
+엔진 클래스를 사용해서 만들어봄 ( 엔진 - Car(이전에 만들었던 속도에 관련된 Car를 이용))
+
+
+부모클래스 : Figure class
+main()      :  CalcMain 
+               width
+               heigth
+
+
+자식클래스 : Recatangle class, Triange class
+                name : 사각형    name : 삼각형
+                calcArea()         calcArea()
+                printResult()      printResult()
+
+-> printResult() 의 출력값은  너비 : 00, 높이 : 00 인 삼각형의 넓이는 00.00 입니다.
+
+
+삼각형과 사각형을 각각 너비와 높이를 주어 생성한 후 넓이를 출력하는 작업.
+
+
+
+
+
+
+
+
+시퀄스
+
+
+
+
+
+https://dev.mysql.com/downloads/connector/j/
+
+
+
+

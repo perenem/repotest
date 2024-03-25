@@ -449,12 +449,18 @@ having avg <=2
 order by belong desc;
 
 
+20. 직원 테이블에서 직원들의 급여평균, 급여총액, 전체직원 수를 부서별로 구하시오.
+
+
+select concat('평균',floor(avg(salary)),'만원')as '급여평균', concat(sum(salary),'만원')as '급여총액', concat(count(emp_name),'명') as '전체직원' from employee
+group by dep_no
+having dep_no = 10
+
+select 
 
 
 
-
-
-
+select concat('평균',floor(avg(salary)),'만원')as '급여평균', concat(sum(salary),'만원')as '급여총액', concat(count(emp_name),'명') as '전체직원' from employee;
 
 
 
@@ -639,6 +645,8 @@ order by f1 asc  or  desc
 
 group by 필드
 having 그룹화 한 필드의 조건
+
+
 
 
 alter - 테이블의 구조 변경
@@ -931,6 +939,7 @@ from member_profile
 where month(date_of_birth) = 3 and tlno is not null
 order by member_id;
 
+
 member+profile 테이블에서 생일이 3월인 여성 회원의 ID, 이름, 성별, 생년월일을 조회하는 sql문 작성
 이때, 전화번호가 null인 경우는 출력 제외, 결과는 회원 id를 기준으로 오름차순 정렬.
 
@@ -940,6 +949,7 @@ where month(date_of_birth) = month(now()) and tlno is not null
 order by member_id;
 
 이 경우는 이번달 생일인사람이 출력된다.
+
 
 
 논리 함수
@@ -1046,6 +1056,7 @@ from girl_group as g inner join song as s        <- where 조건이 어디인지
 where g.hit_song_id = s._id;
 
 
+
 inner join <- 프라이머리 키와 포링 키의 값을 비교해 엮어주는 역할?
 
 
@@ -1129,6 +1140,8 @@ group by
 
 
 
+
+
 3개의 테이블 조인
 student 테이블 : p_id , name
 girl_group : _id, name, hit_song_id
@@ -1156,6 +1169,7 @@ from girl_group as gg inner join song as ss
 on gg.hit_song_id = ss._id
 inner join student st
 on st.p_id = gg._id;
+
 
 
 
@@ -1198,6 +1212,8 @@ insert into emp(id,name) values
 select 
 from emp as emp1 inner join emp as emp2
 on emp1.id = s.super_id
+
+
 
 
 select emp1.id, emp1.name, emp2.name
@@ -1331,6 +1347,25 @@ commit 정보를 불러오는 명령어
 
 
 
+refactoring 
+
+
+
+
+// 1. adminView class - 관리자 메뉴 보이기 및 메뉴선택
+
+// 2. adminSerivce - 관리자메뉴의 구체적 실행 서비스
+// 메뉴변경 (update) , 가격변경 (updateprice) , 재고추가 (updatestock)
+// 메뉴추가 ( updatemenu) , 수익확인 (confirmprofit)
+
+// 3. userView class - 사용자 화면 보이기 및 메뉴 선택
+
+// 4. userService class - 사용자의 자판기 사용 기능
+// 메뉴선택 (outproduct) , 금액추가 (addmoney)
+// 잔돈반환 (returnmoney) , 관리자메뉴호출 (calladmin)
+
+// 5. 전체 기능을 패키지로 분리를 한다.
+// 화면에 보여주는 서비스 (view)    +    기능을 구현하는 패키지 (service)
 
 
 
@@ -1338,6 +1373,87 @@ commit 정보를 불러오는 명령어
 
 
 
+
+
+
+
+
+
+
+import com.sun.source.tree.ContinueTree;
+
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    static Scanner sc = new Scanner(System.in);
+    static final int Max = 5; //최대 취급 제품 수
+    static String[] product = new String[Max]; //제품배열
+    static int[] price = new int[Max]; // 가격배열
+    static int[] stock = new int[Max]; // 재고수량 배열
+    static int currentMoney = 0; //사용자가 넣은 돈
+    static int profit = 0; // 관리자의 총 수익 계산용 변수
+
+    public static void initialize() {
+        product[0] = "콜라";
+        price[0] = 500;
+        stock[0] = 3;
+        product[1] = "사이다";
+        price[1] = 700;
+        stock[1] = 4;
+        product[2] = "커피";
+        price[2] = 1500;
+        stock[2] = 5;
+    }
+
+    public static void user() {
+        boolean first = true;
+        while (true) {
+            System.out.println("===========================");
+            System.out.println("자판기 입니다.(번호:상품(가격)-재고)");
+            // 판매중인 상품 정보를 보여줍니다.
+            for (int i = 0; i < product.length; i++) {
+                if (product[i] != null) {  // != -> not  같지 않다
+                    System.out.printf(i + 1 + ":" + product[i] + "(" + price[i] + "W)" + "-" + stock[i] + "개  ");
+                    // 메뉴세팅
+                }
+            }
+            System.out.println("");
+            System.out.println("===========================");
+            // 처음에만 금액을 입력받는다.
+            if (first == true) {
+                System.out.println("금액을 넣어주세요.");
+                currentMoney = sc.nextInt();
+                System.out.println("현재 잔액은 " + currentMoney + "입니다.");
+                first = false;
+            }
+            //처음이 아닌 경우 메뉴를 선택한다.
+            System.out.println("메뉴입력: ");
+            int num = sc.nextInt();
+            for (int i = 0; i < product.length; i++) {
+                if (price[i] > currentMoney) {
+                    System.out.println("잔액이 부족합니다.");
+                }
+                if (price[i] < currentMoney) {
+                    if (product[i] != null) {
+                        System.out.println(product[i] + "이(가) 나왔습니다.");
+                    } else {
+                        stock[i] = stock 
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+            public static void main (String[]args){
+                initialize();
+                user();
+        }
+}
 
 
 
