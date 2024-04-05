@@ -98,3 +98,5 @@ https://dev.mysql.com/downloads/connector/j/
 
 
 
+spring initializer
+maven repository
