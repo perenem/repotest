@@ -1,0 +1,24 @@
+html , css , java 를 통해 랜덤로또번호를 생성할 프로그램을 만든다.
+DB에 연동하여 회원가입과 생성된 번호를 DB에 넣고, 출력까지 만든다
+회원가입시에는 아이디,비밀번호,이름,나이,전화번호,이메일란을 생성하고,
+관리자아이디는 admin이란 아이디로 생성하고, 회원가입된 유저들의 정보를 수정 할 수 있도록 세팅
+DB에 있는 이전회차들의 번호를 가지고 다음에 나올 가장 확률이 높은 번호를 생성한다.
+그 아래에는 그 다음으로 높은 확률로 생성된 번호들을 생성하고, 생성된 번호뒤에는 몇%의 확률로 많이 나왔는지 생성한다.
+자바 코딩으로 생성하라
+localhost:8080/lotto 라는 이름으로 페이지를 생성하고, 번호를 생성하라
+link 라는 스키마안에 lotto 라는 테이블과, myus 라는 테이블도 생성되어있다.
+myus (유저 회원정보 테이블)
+dto라는 프로젝트 폴더안에 Lotto.class / User.class
+Repository 프로젝트 폴더 안에 LottoRepository.class / UserRepository.class
+service 프로젝트 폴더 안에 AdminController.class / LottoController.class / UserController.class
+/ UserService.class가 있고, resources/templates 안에 lotto.html / signup.html 이 있다.
+각각의 클래스와 html 을 이용하여 코딩을 작성하고, 추가 및 삭제 , 수정 해야될 class와 html 이 있다면 바꿔서 코딩작성
+lotto 홈페이지는 로그인페이지를 처음으로 생성 후
+회원가입(signup) / 로그인(login) 버튼을 생성하여
+signup 으로 이동한 후에 db에 연동하여
+아이디,비밀번호,이름,나이,전화번호,이메일란을 입력하는 칸을 생성하고,
+완료버튼을 누르면 로그인화면으로 돌아간다.
+로그인화면에서는
+아이디와 비밀번호 확인을 통해 확인을 한 이후 로그인이 되었을때는
+랜덤번호 생성하는 페이지로 옮겨져 랜덤번호를 생성한 페이지로 옮긴다.
+코딩을 작성하고, 전부 다 작성해서 보여줘
